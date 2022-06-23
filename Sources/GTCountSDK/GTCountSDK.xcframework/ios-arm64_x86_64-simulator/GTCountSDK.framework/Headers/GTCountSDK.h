@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-1.3.2.0
+//  Version : GSIDO-IOS-1.3.3.0
 
 #import <Foundation/Foundation.h>
 
@@ -45,9 +45,13 @@
  */
 + (instancetype)sharedInstance;
 
-
 /// gtcid可用于用户画像标签的查询。
 + (NSString*)gtcid;
+
+/**
+ *  设置 App Groups Id (如有使用 iOS Extension SDK，请设置该值)
+ */
++ (void)setApplicationGroupIdentifier:(NSString*)identifier;
 
 /**
  初始化启动接口 
