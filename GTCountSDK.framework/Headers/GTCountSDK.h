@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-1.3.3.0
+//  Version : GSIDO-IOS-1.3.4.0
 
 #import <Foundation/Foundation.h>
 
@@ -26,13 +26,15 @@
 
 // 累计条数到达ForceUploadSize 或 距离上一次汇报时间间隔超过UploadInterval后，将触发上传流程
 
-// trackCustomKeyValueEvent和trackCountEvent的上报间隔， 默认10000毫秒，即10秒
+// trackCustomKeyValueEvent和trackCountEvent的上报间隔， 默认10000毫秒，即10秒。
+// 传入的参数如果小于默认值，则按照默认值生效。
 @property (nonatomic, assign) NSInteger eventUploadInterval;
 
 // trackCustomKeyValueEvent和trackCountEvent 的上报条数阈值，默认30
 @property (nonatomic, assign) NSInteger eventForceUploadSize;
 
 // Profile上报间隔， 默认5000毫秒，即5秒
+// 传入的参数如果小于默认值，则按照默认值生效。
 @property (nonatomic, assign) NSInteger profileUploadInterval;
 
 // Profile上报条数阈值，默认5

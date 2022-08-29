@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GCIDOSDK"
   # 版本号/库原代码的版本
-  s.version      = "1.3.3.0"
+  s.version      = "1.3.4.0"
   # 简介
   s.summary      = "个推GCIDO iOS SDK CocoaPods集成库"
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'GTCountSDK.framework'
 
   # 依赖的第三方pod
-  s.dependency 'GTCommonSDK', '>= 1.2.8.0'
+  s.dependency 'GTCommonSDK', '>= 1.2.8.2'
 
   # 所需的framework，多个用逗号隔开
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security'
