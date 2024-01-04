@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-2.0.2.0
+//  Version : GSIDO-IOS-2.0.4.0
 
 #import <Foundation/Foundation.h>
 
@@ -101,6 +101,14 @@
  */
 + (void)setProfile:(NSDictionary *)profiles withExt:(NSString *)ext;
 + (void)setProfile:(NSDictionary *)profiles;
+
+/// 对应GTSDK应用内弹窗回调的展示埋点
+/// - Parameter dic: 弹窗数据
++ (void)popupDidShow:(NSDictionary *)dic;
+
+/// 对应GTSDK应用内弹窗回调的点击埋点
+/// - Parameter dic: 弹窗数据
++ (void)popupDidClick:(NSDictionary *)dic;
 
 /**
  是否启动开发者模式，在该模式下数据会实时上传，并且将会打印相关的数据上传信息
