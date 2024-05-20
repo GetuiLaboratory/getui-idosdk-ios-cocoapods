@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-2.0.5.0
+//  Version : GSIDO-IOS-2.0.6.0
 
 #import <Foundation/Foundation.h>
 
@@ -40,6 +40,8 @@
 // Profile上报条数阈值，默认5
 @property (nonatomic, assign) NSInteger profileForceUploadSize;
 
+// 设置用户id
+@property (nonatomic, copy) NSString *userId;
 
 /**
  SDK 实例，用于获取和设置 SDK 相关配置属性。
