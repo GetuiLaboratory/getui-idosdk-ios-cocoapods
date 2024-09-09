@@ -5,9 +5,17 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-2.0.6.0
+//  Version : GSIDO-IOS-2.0.7.0
 
 #import <Foundation/Foundation.h>
+
+
+@protocol GTCountSDKDelegate <NSObject>
+
+@optional
+- (void)GTCountSDKDidReceiveGtcid:(NSString *)gtcid error:(NSError*)error;
+@end
+
 
 @interface GTCountSDK : NSObject
 
@@ -43,6 +51,10 @@
 // 设置用户id
 @property (nonatomic, copy) NSString *userId;
 
+// 同步生成gtcid， 默认NO：异步生成，初始化sdk后，直接可获取gtcid， YES：同步生成，首次安装后需要等待服务端响应后才能获取gtcid
+// add at 2.0.7.0
+@property (nonatomic, assign) BOOL syncGenerateGtcid;
+
 /**
  SDK 实例，用于获取和设置 SDK 相关配置属性。
  示例，设置上报策略：[[GTCountSDK sharedInstance] setSessionTime:30*1000];
@@ -62,8 +74,9 @@
  
  @param appId 开发者后台生成的 appId
  @param channelId 渠道名称，默认为 'appstore'
+ @param delegate delegate
  */
-+ (void)startSDKWithAppId:(NSString *)appId withChannelId:(NSString *)channelId;
++ (void)startSDKWithAppId:(NSString *)appId withChannelId:(NSString *)channelId delegate:(id<GTCountSDKDelegate>)delegate;
 
 /**
  记录自定义事件的开始
