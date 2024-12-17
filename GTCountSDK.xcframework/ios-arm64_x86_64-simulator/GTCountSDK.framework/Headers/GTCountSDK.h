@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-2.0.7.0
+//  Version : GSIDO-IOS-2.0.8.0
 
 #import <Foundation/Foundation.h>
 
@@ -69,6 +69,10 @@
  */
 + (void)setApplicationGroupIdentifier:(NSString*)identifier;
 
+/// 注册事件公共属性
+/// @param properties 属性字典， value 仅支持NSNumber, NSString, NSDate 4 种类型。
++ (void)registerEventProperties:(NSDictionary*)properties;
+
 /**
  初始化启动接口 
  
@@ -107,12 +111,16 @@
  */
 + (void)trackCountEvent:(NSString *)eventId withArgs:(NSDictionary *)args withExt:(NSString *)ext;
 
+/// App-H5打通
+/// @param event H5传给App的事件内容
+/// add at 2.0.8.0
++ (NSString*)onBridgeEvent:(NSString *)event;
+
 /**
  用户属性设置
  
  @param profiles 用户属性参数，key 必须为 NSString 类型，value 仅支持NSNumber, BOOL, NSString, NSDate 4 种类型
  @param ext 自定义ext字段内容。
- 
  */
 + (void)setProfile:(NSDictionary *)profiles withExt:(NSString *)ext;
 + (void)setProfile:(NSDictionary *)profiles;
