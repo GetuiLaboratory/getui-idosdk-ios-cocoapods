@@ -5,7 +5,7 @@
 //  Created by GeTui on 2017/7/18.
 //  Copyright © 2017年 GeTui. All rights reserved.
 //
-//  Version : GSIDO-IOS-2.0.8.0
+//  Version : GSIDO-IOS-2.0.9.0
 
 #import <Foundation/Foundation.h>
 
